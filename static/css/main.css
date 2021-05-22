@@ -1,0 +1,13 @@
+.product-actions{
+    display:block;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: red;
+    font-weight: 500;
+}
+.product-actions nav{
+    color: white;
+}
+.product-actions nav:hover{
+    color: red;
+}

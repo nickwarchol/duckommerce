@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="#">Duck-Ommerce</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+    <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+    </li>
+    </ul>
+</div>
+</nav>
+<title>Duck-Ommerce Site</title>
+{% endblock %}
+
+{% block content %}
+<h2>DuckOmmerce Products</h2>
+<table class="products">
+    <tr>
+        <th>ID</th>
+        <th>Name: <input placeholder="Enter name here"></th>
+        <th>Price: <input placeholder="Enter name here"></th>
+        <th>Category: <input placeholder="Product Category"></th>
+        <th>Quantity: <input placeholder="Enter Product Quantity"></th>
+        <th>Description: <input placeholder="Product Description"></th>
+        <th>Tag</th>
+        <th>Active</th>
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </tr>
+</table>
+
+<div class="content">
+    
+    <table class="product-actions">
+        <h4>Product Added Options: </h4>
+        <tr>
+            <th>Added</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.content }}</td>
+            <td></td>
+            <td>
+                <a href="">Delete</a>
+                <br>
+                <a href="">Update</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <form action="/" method="POST">
+        <input type="text" name="content" id="content">
+        <input type="submit" value="Add Product">
+    </form>
+</div>
+
+
+
+{% endblock content %}
